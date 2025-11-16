@@ -20,7 +20,7 @@ namespace BookingSystem.Domain.ValueObjects
                 throw new DomainException("Price can not be less than zero.");
             }
 
-            if (discount >= 0 && discount <= 100)
+            if (discount < 0 && discount > 100)
             {
                 throw new DomainException("Price discount should be in range between 0 and 100.");
             }
