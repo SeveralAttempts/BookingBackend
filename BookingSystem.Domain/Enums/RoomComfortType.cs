@@ -2,7 +2,7 @@ namespace BookingSystem.Domain.Enums
 {
     public enum RoomComfortType
     {
-        Standart,
+        Standard,
         Premium,
         Luxe,
         PresidentLuxe

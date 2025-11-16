@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookingSystem.Domain.Exceptions;
 
-namespace BookingSystem.Domain.Enums.Extesions
+namespace BookingSystem.Domain.Enums.Extensions
 {
     public static class RoomComfortTypeExtension
     {
@@ -12,7 +12,7 @@ namespace BookingSystem.Domain.Enums.Extesions
         {
             return type switch
             {
-                RoomComfortType.Standart => "Standart",
+                RoomComfortType.Standard => "Standard",
                 RoomComfortType.Premium => "Premium",
                 RoomComfortType.Luxe => "Luxe",
                 RoomComfortType.PresidentLuxe => "PresidentLuxe",
