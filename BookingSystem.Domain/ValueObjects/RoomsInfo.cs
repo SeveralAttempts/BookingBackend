@@ -33,5 +33,10 @@ namespace BookingSystem.Domain.ValueObjects
 
             return new RoomsInfo(allRoomsAmount, roomsAvailable, roomsReserved);
         }
+
+        public bool HasAvailableRooms()
+        {
+            return RoomsAvailable > 0;
+        }
     }
 }

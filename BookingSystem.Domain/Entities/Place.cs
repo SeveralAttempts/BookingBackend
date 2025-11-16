@@ -16,9 +16,10 @@ namespace BookingSystem.Domain.Entities
         public Location Location { get; }
         public RoomsInfo RoomsInfo { get; }
         public Price AvaragePrice { get; }
+        public CheckInTimeRange CheckInTime { get; }
 
         private Place(Guid id, string name, string description, ushort rating,
-         Location location, RoomsInfo roomsInfo, Price avaragePrice)
+         Location location, RoomsInfo roomsInfo, Price avaragePrice, CheckInTimeRange checkInTime)
         {
             Id = id;
             Name = name;
@@ -26,11 +27,12 @@ namespace BookingSystem.Domain.Entities
             Rating = rating;
             Location = location;
             RoomsInfo = roomsInfo;
-            AvaragePrice = avaragePrice;    
+            AvaragePrice = avaragePrice;
+            CheckInTime = checkInTime;
         }
 
         public static Place Create(Guid id, string name, string description, ushort rating,
-         Location location, RoomsInfo roomsInfo, Price avaragePrice)
+         Location location, RoomsInfo roomsInfo, Price avaragePrice, CheckInTimeRange checkInTime)
         {
             if (string.IsNullOrEmpty(name) || string.IsNullOrWhiteSpace(name))
             {
@@ -47,7 +49,7 @@ namespace BookingSystem.Domain.Entities
                 throw new DomainException("Rating should be in range from 0 to 5.");
             }
 
-            return new Place(id, name, description, rating, location, roomsInfo, avaragePrice);
+            return new Place(id, name, description, rating, location, roomsInfo, avaragePrice, checkInTime);
         }
     }
 }
