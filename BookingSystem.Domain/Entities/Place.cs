@@ -49,7 +49,32 @@ namespace BookingSystem.Domain.Entities
                 throw new DomainException("Rating should be in range from 0 to 5.");
             }
 
+            if (location is null)
+            {
+                throw new DomainException("Location can not be null.");
+            }
+
+            if (roomsInfo is null)
+            {
+                throw new DomainException("Rooms info can not be null.");
+            }
+
+            if (avaragePrice is null)
+            {
+                throw new DomainException("Avarage price can not be null.");
+            }
+
+            if (checkInTime is null)
+            {
+                throw new DomainException("Check-in time range can not be null.");
+            }
+
             return new Place(id, name, description, rating, location, roomsInfo, avaragePrice, checkInTime);
+        }
+
+        public bool IsCheckInAvailable(TimeOnly now)
+        {
+            return now >= CheckInTime.TimeFrom && now <= CheckInTime.TimeTo;
         }
     }
 }

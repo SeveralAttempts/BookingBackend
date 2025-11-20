@@ -37,6 +37,11 @@ namespace BookingSystem.Domain.Entities
                 throw new DomainException("Room capacity can not be less or equal to zero.");
             }
 
+            if (price is null)
+            {
+                throw new ArgumentException("Price can not be null");
+            }
+
             return new Room(id, name, comfortType, roomCapacity, price);
         }
     }

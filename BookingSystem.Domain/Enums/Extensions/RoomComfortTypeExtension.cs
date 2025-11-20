@@ -15,7 +15,7 @@ namespace BookingSystem.Domain.Enums.Extensions
                 RoomComfortType.Standard => "Standard",
                 RoomComfortType.Premium => "Premium",
                 RoomComfortType.Luxe => "Luxe",
-                RoomComfortType.PresidentLuxe => "PresidentLuxe",
+                RoomComfortType.PresidentLuxe => "President Luxe",
                 _ => throw new DomainException("Unhandled RoomComfortType enum value in ToDisplay extension method.")
             };
         }

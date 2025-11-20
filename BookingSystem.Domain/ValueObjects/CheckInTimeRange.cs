@@ -19,12 +19,14 @@ namespace BookingSystem.Domain.ValueObjects
 
         public static CheckInTimeRange Create(TimeOnly timeFrom, TimeOnly timeTo)
         {
-            if (timeFrom.CompareTo(timeTo) < 0)
+            if (timeFrom > timeTo)
             {
                 throw new DomainException("Check-in start time can not be higher than end time.");
             }
 
             return new CheckInTimeRange(timeFrom, timeTo);
-        } 
+        }
+
+        public TimeSpan GetDuration() => TimeTo - TimeFrom;
     }
 }
